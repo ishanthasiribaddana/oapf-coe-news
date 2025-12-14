@@ -1,0 +1,33 @@
+﻿List of participants
+No.
+	Name
+	1
+	Prof. Prof Lasitha Devendra 
+	2
+	Dr. Ishantha Siribaddana
+	3
+	Mr. Bhatiya Jayakody
+	4
+	Prof. Nimal Rajapaksa
+	5
+	Mr. Sahan Ranwala
+	6
+	Dr Sankapala Gamwarige
+	7
+	Mr. Ashoka Shanthakumara
+	8
+	Mr. Malinda de Lanerolle
+	9
+	Prof. Praneeth Abeysundara
+	10
+	Prof Udeni Nawagamuwa
+	11
+	Mr. Pasindu Hatanachchige
+	12
+	Mr. Channa Palansuriya
+	13
+	Mr. Sajith Wickramarachchi
+	14
+	Prof. Athula Ginige
+	15
+	Mr. Shiran Perera
