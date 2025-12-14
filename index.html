@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAPF News - Centre of Excellence Project Meeting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --maroon: #722F37;
+            --maroon-dark: #5a252c;
+            --maroon-light: #8b3d47;
+            --gold: #C9A227;
+            --gold-light: #d4b84a;
+            --text-dark: #1a1a1a;
+            --text-light: #555555;
+            --text-muted: #777777;
+            --bg-white: #ffffff;
+            --bg-light: #f8f6f3;
+            --bg-cream: #faf9f7;
+            --white: #ffffff;
+            --border: #e5e5e5;
+            --border-light: #f0f0f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        /* Header */
+        header {
+            background: var(--maroon);
+            color: var(--white);
+            padding: 0.75rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-section img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+            color: var(--white);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,162,39,0.08)" stroke-width="0.5"/></svg>') repeat;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero .date {
+            font-size: 1rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .hero .date svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--maroon);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        /* News Article Section */
+        .news-article {
+            padding-top: 2rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .news-article .section-title {
+            font-size: 2rem;
+            line-height: 1.3;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .news-article .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .article-author {
+            font-weight: 500;
+            color: var(--maroon);
+        }
+
+        .article-hero-image {
+            margin: 0 -2rem 2rem;
+            cursor: pointer;
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .article-hero-image figcaption,
+        .article-wide-image figcaption,
+        .float-image figcaption {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        .article-body {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .article-body p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: var(--maroon);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .article-body h4 {
+            font-size: 1rem;
+            color: var(--maroon-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--maroon);
+            margin-bottom: 1rem;
+        }
+
+        .lead-paragraph {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            line-height: 1.9;
+        }
+
+        /* Inline Photo Grid */
+        .inline-photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .inline-photo {
+            margin: 0;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .inline-photo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(114, 47, 55, 0.2);
+        }
+
+        .inline-photo img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Float Images */
+        .float-image {
+            width: 45%;
+            margin: 0.5rem 0 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .float-image:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(114, 47, 55, 0.2);
+        }
+
+        .float-right {
+            float: right;
+            margin-left: 1.5rem;
+        }
+
+        .float-left {
+            float: left;
+            margin-right: 1.5rem;
+        }
+
+        .float-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        /* Wide Image */
+        .article-wide-image {
+            margin: 2.5rem -2rem;
+            cursor: pointer;
+        }
+
+        .article-wide-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Flagship Centers */
+        .flagship-centers {
+            margin: 1.5rem 0;
+        }
+
+        .flagship-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            background: var(--bg-cream);
+            border-radius: 8px;
+            border-left: 4px solid var(--maroon);
+            transition: box-shadow 0.2s;
+        }
+
+        .flagship-item:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .flagship-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--maroon);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 0.9rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .flagship-content p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .article-signature {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
+            color: var(--maroon);
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Centre of Excellence Section */
+        .coe-section {
+            background: var(--bg-cream);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+
+        .coe-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .coe-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .coe-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .coe-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: var(--maroon);
+            margin-bottom: 1.25rem;
+        }
+
+        .centers-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .center-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0.75rem;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            transition: all 0.2s;
+        }
+
+        .center-item:hover {
+            border-color: var(--maroon);
+            box-shadow: 0 3px 10px rgba(114, 47, 55, 0.1);
+        }
+
+        .center-item .level {
+            background: var(--maroon);
+            color: var(--white);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* Photo Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(114, 47, 55, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Highlights Section */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--maroon);
+            transition: all 0.2s;
+        }
+
+        .highlight-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .highlight-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--maroon);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--maroon);
+            color: var(--white);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 50px;
+        }
+
+        .footer-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+        }
+
+        .motto {
+            color: var(--gold);
+            font-style: italic;
+            margin: 0.75rem 0;
+            font-size: 1rem;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .news-article .section-title {
+                font-size: 1.75rem;
+            }
+
+            .float-image {
+                width: 50%;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .news-article .section-title {
+                font-size: 1.5rem;
+            }
+
+            .article-hero-image,
+            .article-wide-image {
+                margin-left: -1rem;
+                margin-right: -1rem;
+            }
+
+            .inline-photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .inline-photo img {
+                height: 180px;
+            }
+
+            .float-image {
+                width: 100%;
+                float: none;
+                margin: 1.5rem 0;
+            }
+
+            .float-right,
+            .float-left {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .flagship-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .flagship-number {
+                margin-bottom: 0.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .coe-section {
+                padding: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .logo-section img {
+                height: 45px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .logo-text span {
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="oapf-logo-big.jpg" alt="OAPF Logo">
+                <div class="logo-text">
+                    Centre of Excellence Project
+                    <span>Old Anandians' Professional Forum</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="project.html">Project</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>OAPF Lead Consultants Meeting</h1>
+            <p class="subtitle">Centre of Excellence Project Discussion</p>
+            <p class="date">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                December 14, 2025 &nbsp;|&nbsp; Colombo Club, Taj Samudra, Colombo
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- News Article Section -->
+        <section id="about" class="news-article">
+            <div class="article-container">
+                <h2 class="section-title">Centre of Excellence: Shaping the Future of Learning at Ananda College</h2>
+                <div class="article-meta">
+                    <span class="article-author">By the COE Lead Consultants Committee</span>
+                    <span class="article-date">December 2025</span>
+                </div>
+                
+                <!-- Hero Image -->
+                <figure class="article-hero-image">
+                    <img src="20251214_160124.jpg" alt="COE Lead Consultants Committee Meeting at Taj Samudra Hotel" onclick="openLightbox(this.parentElement)">
+                    <figcaption>Distinguished members of the COE Lead Consultants Committee gathered at Colombo Club, Taj Samudra Hotel</figcaption>
+                </figure>
+                
+                <div class="article-body">
+                    <h3 class="article-subtitle">A New Chapter Begins</h3>
+                    <p class="lead-paragraph">On a warm Sunday afternoon, 14 December 2025, a distinguished group of academics, professionals, and visionaries gathered at the Colombo Club, Taj Samudra Hotel. Their shared purpose was clear: to shape the next phase of the <strong>Centre of Excellence (COE)</strong> at Ananda College—an initiative that aims to redefine how young Anandians learn, think, and contribute to the nation.</p>
+                    
+                    <p>What emerged from this meeting was not merely a set of operational decisions, but a bold educational philosophy—one rooted in real-world relevance, innovation, values, and human development.</p>
+                    
+                    <!-- Inline Photo Grid -->
+                    <div class="inline-photo-grid">
+                        <figure class="inline-photo" onclick="openLightbox(this)">
+                            <img src="20251214_154113.jpg" alt="Committee members in discussion">
+                        </figure>
+                        <figure class="inline-photo" onclick="openLightbox(this)">
+                            <img src="20251214_160111.jpg" alt="Meeting attendees">
+                        </figure>
+                    </div>
+                    
+                    <h3>From Curriculum to Creation</h3>
+                    <p>One of the most significant outcomes of the meeting was a unanimous decision to move away from the traditional notion of a "curriculum." Instead, the COE will operate on a <strong>Project-Based Framework</strong>.</p>
+                    
+                    <p>This shift reflects a deeper belief: that the future belongs to learners who can solve problems, work with ambiguity, collaborate across disciplines, and transform ideas into impact. Every COE centre will therefore be anchored in hands-on projects, experiential learning, and applied outcomes—bridging theory with practice in meaningful ways.</p>
+                    
+                    <h3>Strengthening the Foundation: Governance and Operations</h3>
+                    <p>To support this ambitious vision, the Steering Committee approved the recruitment of a Chief Executive Officer (CEO) to lead day-to-day operations and strategic execution. Alongside this, the need for structured governance, standard operating procedures, and transparent reporting mechanisms was acknowledged.</p>
+                    
+                    <!-- Float Image Right -->
+                    <figure class="float-image float-right" onclick="openLightbox(this)">
+                        <img src="20251214_160249.jpg" alt="Committee members deliberating">
+                        <figcaption>Members deliberating on key initiatives</figcaption>
+                    </figure>
+                    
+                    <p>A dedicated governance session will follow, ensuring that the COE is not only visionary in spirit but also robust, accountable, and sustainable in practice.</p>
+                    
+                    <h3>Digital Enablement for Modern Learning</h3>
+                    <p>Recognizing the importance of digital platforms in contemporary education, the committee confirmed that a Learning Management System (LMS) will be made available free of charge to the COE. Hosted on a dedicated server, this platform will support blended learning, documentation, collaboration, and assessment.</p>
+                    
+                    <p>In parallel, the use of Google Classroom is being explored to complement COE activities, ensuring accessibility and scalability from the outset.</p>
+                    
+                    <div class="clearfix"></div>
+                    
+                    <!-- Centre of Excellence Building -->
+                    <figure class="article-wide-image" onclick="openLightbox(this)">
+                        <img src="Untitled-2.jpg" alt="Centre of Excellence Building Design">
+                        <figcaption>The Centre of Excellence: A state-of-the-art five-story facility designed to house ten specialized learning centers</figcaption>
+                    </figure>
+                    
+                    <h3>The Eight Flagship Proposals: Pillars of the COE Vision</h3>
+                    <p>At the heart of the COE are eight flagship centres and initiatives, each addressing a critical dimension of future-ready education:</p>
+                    
+                    <div class="flagship-centers">
+                        <div class="flagship-item">
+                            <span class="flagship-number">1</span>
+                            <div class="flagship-content">
+                                <h4>Artificial Intelligence Innovation Centre</h4>
+                                <p>Designed for high-potential post-O/L students, this centre focuses on AI, machine learning, and data-driven problem solving. Beyond technical competence, it emphasizes ethical AI, responsibility, and innovation aligned with societal needs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flagship-item">
+                            <span class="flagship-number">2</span>
+                            <div class="flagship-content">
+                                <h4>Entrepreneurship & Innovation Centre</h4>
+                                <p>This centre blends STEAM education with entrepreneurship, guiding students from idea generation to prototyping and venture thinking. Grounded in values and sustainability, it nurtures creators who are not only commercially aware but also socially conscious.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flagship-item">
+                            <span class="flagship-number">3</span>
+                            <div class="flagship-content">
+                                <h4>Fine Arts & Digital Arts Centre</h4>
+                                <p>Where tradition meets technology, this centre integrates classical fine arts with modern digital expression. Students develop portfolios, participate in exhibitions, and gain exposure to creative industries—locally and globally.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flagship-item">
+                            <span class="flagship-number">4</span>
+                            <div class="flagship-content">
+                                <h4>Applied Science & Research Centre</h4>
+                                <p>A hub for scientific curiosity, this centre supports research-based learning, Olympiad preparation, and applied experimentation. Students are encouraged to ask questions, test hypotheses, and contribute to knowledge creation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Float Image Left -->
+                    <figure class="float-image float-left" onclick="openLightbox(this)">
+                        <img src="20251214_165934.jpg" alt="Discussion session">
+                        <figcaption>Engaging discussions on the COE vision</figcaption>
+                    </figure>
+                    
+                    <div class="flagship-centers">
+                        <div class="flagship-item">
+                            <span class="flagship-number">5</span>
+                            <div class="flagship-content">
+                                <h4>Mathematics Excellence Centre</h4>
+                                <p>Focused on advanced mathematical thinking, this centre prepares students for national and international mathematics competitions while strengthening logical reasoning, analytical depth, and problem-solving skills.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flagship-item">
+                            <span class="flagship-number">6</span>
+                            <div class="flagship-content">
+                                <h4>Media Centre of Excellence</h4>
+                                <p>Responding to the evolving media landscape, this centre equips students with skills in radio, television, digital, and convergent media. Emphasis is placed on content creation, production workflows, and entrepreneurial media initiatives.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flagship-item">
+                            <span class="flagship-number">7</span>
+                            <div class="flagship-content">
+                                <h4>Good Ambassadors Auditorium</h4>
+                                <p>More than an auditorium, this is the moral and emotional heart of the COE. Through storytelling, reflection, dialogue, and role models, students develop character, empathy, resilience, and leadership. Success here is measured not only by achievement, but by Gross Individual Happiness (GIH).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flagship-item">
+                            <span class="flagship-number">8</span>
+                            <div class="flagship-content">
+                                <h4>STEAM Applied Technology Projects</h4>
+                                <p>Hands-on technology projects—including microcontroller-based water meters and weather monitoring systems—allow students to move from design to prototype to real-world application. These initiatives foster systems thinking, sustainability awareness, and product development skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                    
+                    <h3>Looking Ahead</h3>
+                    <p>With a target launch date of 15 May 2025, preparatory academic activities will begin immediately where possible. Upcoming phases will focus on finalizing governance frameworks, budgets, staffing structures, and partnerships—ensuring the COE opens not just on time, but with purpose and excellence.</p>
+                    
+                    <h3>A Collective Vision</h3>
+                    <p>The Centre of Excellence at Ananda College represents a decisive shift—from education as information delivery to education as transformation. It seeks to develop students who are intellectually capable, emotionally grounded, ethically strong, and globally relevant.</p>
+                    
+                    <p>As this journey unfolds, the continued engagement of members, alumni, educators, and partners will remain essential. Together, we are not merely building centres—we are shaping the future of learning, leadership, and nation-building.</p>
+                    
+                    <p class="article-signature"><em>Centre of Excellence Lead Consultants Committee<br>Ananda College, Colombo</em></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="oapf-logo-big.jpg" alt="OAPF Logo">
+                <span class="footer-text">Old Anandians' Professional Forum</span>
+            </div>
+            <p class="motto">"Veni Vidi Vici" - I Came, I Saw, I Conquered</p>
+            <p class="copyright">&copy; 2025 OAPF. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close">&times;</button>
+        <img src="" alt="Enlarged photo" id="lightbox-img">
+    </div>
+
+    <script>
+        // Article toggle functionality
+        function toggleArticle() {
+            const articleFull = document.getElementById('article-full');
+            const btnText = document.getElementById('btn-text');
+            const btn = document.querySelector('.read-more-btn');
+            
+            if (articleFull.classList.contains('article-hidden')) {
+                articleFull.classList.remove('article-hidden');
+                articleFull.classList.add('article-visible');
+                btnText.textContent = 'Show Less';
+                btn.classList.add('expanded');
+            } else {
+                articleFull.classList.remove('article-visible');
+                articleFull.classList.add('article-hidden');
+                btnText.textContent = 'Read Full Article';
+                btn.classList.remove('expanded');
+                document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Lightbox functionality
+        function openLightbox(element) {
+            let img;
+            if (element.tagName === 'IMG') {
+                img = element;
+            } else {
+                img = element.querySelector('img');
+            }
+            if (img) {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            nav.style.flexDirection = 'column';
+            nav.style.position = 'absolute';
+            nav.style.top = '100%';
+            nav.style.left = '0';
+            nav.style.right = '0';
+            nav.style.background = 'var(--maroon-dark)';
+            nav.style.padding = '1rem';
+            nav.style.gap = '1rem';
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
